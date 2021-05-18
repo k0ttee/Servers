@@ -29,10 +29,9 @@ mkswap /swapfile
 swapon /swapfile
 echo '/swapfile none swap sw 0 0' >> /etc/fstab
 echo 'vm.swappiness=10' >> /etc/sysctl.conf
+echo 1000 > /proc/sys/vm/vfs_cache_pressure
 sysctl -p
 systemctl daemon-reload
-
-echo 1000 > /proc/sys/vm/vfs_cache_pressure
 
 ######################
 # рамдиск для сессий #

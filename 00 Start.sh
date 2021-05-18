@@ -17,3 +17,4 @@ alias diskspace="df -H /"
 alias diskinode="df -i /"
 alias purge="sync & echo 3 > /proc/sys/vm/drop_caches"
 
+source .bashrc

@@ -2,6 +2,7 @@
 # конфиг #
 ##########
 
+touch .hushlogin
 nano .bashrc
 
 export LANG="ru_RU.UTF-8"
@@ -14,3 +15,4 @@ alias reboot="systemctl reboot"
 alias diskspace="df -H /"
 alias diskinode="df -i /"
 alias purge="sync & echo 3 > /proc/sys/vm/drop_caches"
+

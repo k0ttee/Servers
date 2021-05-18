@@ -11,6 +11,7 @@ PS1="${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[0
 alias grep="grep --color=auto"
 alias ls="ls -Fa --color"
 alias ll="ls -l --color"
+alias free="free -m"
 alias reboot="systemctl reboot"
 alias diskspace="df -H /"
 alias diskinode="df -i /"

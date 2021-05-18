@@ -23,7 +23,13 @@ source .bashrc
 # файл подкачки #
 #################
 
-
+fallocate -l 1024M /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo '/swapfile none swap sw 0 0' >> /etc/fstab
+sysctl -p
+echo 1000 > /proc/sys/vm/vfs_cache_pressure
 
 ######################
 # рамдиск для сессий #

@@ -2,9 +2,9 @@
 # вход по ключу #
 #################
 
-ssh-keygen -N "" -f ~/.ssh/000.000.000.000
-ssh-copy-id -i ~/.ssh/000.000.000.000 -p 22 root@000.000.000.000
-ssh -i ~/.ssh/000.000.000.000 -p 22 root@000.000.000.000
+ssh-keygen -N "" -f ~/.ssh/0.0.0.0
+ssh-copy-id -i ~/.ssh/0.0.0.0 -p 22 root@0.0.0.0
+ssh -i ~/.ssh/0.0.0.0 -p 22 root@0.0.0.0
 
 /etc/ssh/sshd_config
 

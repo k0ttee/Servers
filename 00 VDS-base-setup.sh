@@ -43,8 +43,8 @@ echo 'tmpfs /sessions tmpfs noatime,nodiratime,nodev,nosuid,size=64M 0 0' >> /et
 # вход только по ключу #
 ########################
 
-ssh-keygen -t rsa
-cat ~/.ssh/id_rsa.pub
+ssh-keygen -f ~/.ssh/0.0.0.0
+ssh-copy-id -i ~/.ssh/0.0.0.0 root@0.0.0.0:22
 
 /etc/ssh/sshd_config
 

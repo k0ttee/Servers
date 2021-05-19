@@ -49,5 +49,23 @@ cat ~/.ssh/id_rsa.pub
 /etc/ssh/sshd_config
 
 PasswordAuthentication no
+PermitRootLogin yes
+ClientAliveInterval 60
+ClientAliveCountMax 360
+Port 22
+LoginGraceTime 1m
+StrictModes yes
+ChallengeResponseAuthentication no
+UsePAM yes
+TCPKeepAlive yes
+PermitUserEnvironment no
+Compression no
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+SyslogFacility AUTH
+LogLevel SILENT
+PrintLastLog no
 
 sudo systemctl restart ssh

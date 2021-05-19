@@ -68,4 +68,4 @@ SyslogFacility AUTH
 LogLevel SILENT
 PrintLastLog no
 
-sudo systemctl restart ssh
+systemctl restart ssh

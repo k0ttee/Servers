@@ -37,9 +37,14 @@ PrintLastLog no
 
 systemctl restart ssh
 
-##########
-# конфиг #
-##########
+
+
+
+
+
+###############
+# конфиг баша #
+###############
 
 ~/.bashrc
 
@@ -55,11 +60,18 @@ alias diskspace="df -H /"
 alias diskinode="df -i /"
 alias purge="sync & echo 3 > /proc/sys/vm/drop_caches"
 
+############################################################################ применение
+
 source .bashrc
 
-#################
-# файл подкачки #
-#################
+
+
+
+
+
+###################################
+# файл подкачки размером по вкусу #
+###################################
 
 fallocate -l 1024M /swapfile
 chmod 600 /swapfile
@@ -68,8 +80,16 @@ swapon /swapfile
 echo '/swapfile none swap sw 0 0' >> /etc/fstab
 echo 'vm.swappiness=10' >> /etc/sysctl.conf
 echo 1000 > /proc/sys/vm/vfs_cache_pressure
+
+############################################################################ применение
+
 sysctl -p
 systemctl daemon-reload
+
+
+
+
+
 
 ######################
 # рамдиск для сессий #

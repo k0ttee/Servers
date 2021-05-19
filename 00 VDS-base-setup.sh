@@ -3,7 +3,7 @@
 #################
 
 ssh-keygen -N "" -f ~/.ssh/0.0.0.0
-ssh-copy-id -i ~/.ssh/0.0.0.0 root@0.0.0.0:22
+ssh-copy-id -i ~/.ssh/0.0.0.0 root@0.0.0.0
 
 /etc/ssh/sshd_config
 

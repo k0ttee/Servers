@@ -1,9 +1,39 @@
+#################
+# вход по ключу #
+#################
+
+ssh-keygen -N "" -f ~/.ssh/0.0.0.0
+ssh-copy-id -i ~/.ssh/0.0.0.0 root@0.0.0.0:22
+
+/etc/ssh/sshd_config
+
+PasswordAuthentication no
+PermitRootLogin yes
+ClientAliveInterval 60
+ClientAliveCountMax 360
+Port 22
+LoginGraceTime 1m
+StrictModes yes
+ChallengeResponseAuthentication no
+UsePAM yes
+TCPKeepAlive yes
+PermitUserEnvironment no
+Compression no
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+SyslogFacility AUTH
+LogLevel SILENT
+PrintLastLog no
+
+systemctl restart ssh
+
 ##########
 # конфиг #
 ##########
 
-touch .hushlogin
-nano .bashrc
+~/.bashrc
 
 export LANG="ru_RU.UTF-8"
 export EDITOR=nano
@@ -39,33 +69,3 @@ systemctl daemon-reload
 
 echo 'tmpfs /sessions tmpfs noatime,nodiratime,nodev,nosuid,size=64M 0 0' >> /etc/fstab
 
-########################
-# вход только по ключу #
-########################
-
-ssh-keygen -N "" -f ~/.ssh/0.0.0.0
-ssh-copy-id -i ~/.ssh/0.0.0.0 root@0.0.0.0:22
-
-/etc/ssh/sshd_config
-
-PasswordAuthentication no
-PermitRootLogin yes
-ClientAliveInterval 60
-ClientAliveCountMax 360
-Port 22
-LoginGraceTime 1m
-StrictModes yes
-ChallengeResponseAuthentication no
-UsePAM yes
-TCPKeepAlive yes
-PermitUserEnvironment no
-Compression no
-X11Forwarding no
-PrintMotd no
-AcceptEnv LANG LC_*
-Subsystem sftp /usr/lib/openssh/sftp-server
-SyslogFacility AUTH
-LogLevel SILENT
-PrintLastLog no
-
-systemctl restart ssh

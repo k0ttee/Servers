@@ -108,6 +108,11 @@ echo 'tmpfs /sessions tmpfs noatime,nodiratime,nodev,nosuid,size=64M 0 0' >> /et
 # логирование #
 ###############
 
+############################################## не писать логи крона в /var/log/auth.log
+
+echo 'EXTRA_OPTS="-L 0"' >> /etc/default/cron
+service cron restart
+
 /etc/rsyslog.conf
 
 #

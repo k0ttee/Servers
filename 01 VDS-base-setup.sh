@@ -114,5 +114,7 @@ echo 'tmpfs /sessions tmpfs noatime,nodiratime,nodev,nosuid,size=64M 0 0' >> /et
 # мусор #
 #########
 
+apt clean
+
 apt purge man
 rm -rf /usr/share/doc/

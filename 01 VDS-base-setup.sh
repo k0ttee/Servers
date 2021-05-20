@@ -108,13 +108,25 @@ echo 'tmpfs /sessions tmpfs noatime,nodiratime,nodev,nosuid,size=64M 0 0' >> /et
 # логирование #
 ###############
 
-############################################## чтобы Cron не гадил своими сессиями в /var/log/auth.log
+################################################################ вообще не писать никакие логи
 
-echo 'session [success=1 default=ignore] pam_succeed_if.so service in cron quiet use_uid' | cat - /etc/pam.d/common-session-noninteractive > temp && mv temp /etc/pam.d/common-session-noninteractive
-service cron restart
+echo '#DISABLE ALL LOGS'                 >> /etc/rsyslog.conf
+echo 'auth,authpriv.*         /dev/null' >> /etc/rsyslog.conf
+echo '*.*;auth,authpriv.none  /dev/null' >> /etc/rsyslog.conf
+echo 'cron.*                  /dev/null' >> /etc/rsyslog.conf
+echo 'daemon.*                /dev/null' >> /etc/rsyslog.conf
+echo 'kern.*                  /dev/null' >> /etc/rsyslog.conf
+echo 'lpr.*                   /dev/null' >> /etc/rsyslog.conf
+echo 'mail.*                  /dev/null' >> /etc/rsyslog.conf
+echo 'user.*                  /dev/null' >> /etc/rsyslog.conf
+echo 'mail.info               /dev/null' >> /etc/rsyslog.conf
+echo 'mail.warn               /dev/null' >> /etc/rsyslog.conf
+echo 'mail.err                /dev/null' >> /etc/rsyslog.conf
+
+################################################################ применение и чистка
+
 service rsyslog restart
-
-#
+rm -rf /var/log/*
 
 
 

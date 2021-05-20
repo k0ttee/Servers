@@ -141,3 +141,4 @@ apt clean
 
 apt purge man
 rm -rf /usr/share/doc/
+rm -rf /var/log/*

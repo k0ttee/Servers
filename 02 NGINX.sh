@@ -71,6 +71,8 @@ http{
 
 /etc/nginx/sites-enabled/site.ru
 
+#############################################################заменить все site.ru своим доменом
+
 #HTTPS_WWW → HTTPS
 server {
         listen 443 ssl http2;

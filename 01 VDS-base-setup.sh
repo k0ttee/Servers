@@ -99,3 +99,14 @@ systemctl daemon-reload
 
 echo 'tmpfs /sessions tmpfs noatime,nodiratime,nodev,nosuid,size=64M 0 0' >> /etc/fstab
 
+
+
+
+
+
+###############
+# логирование #
+###############
+
+/etc/rsyslog.conf
+

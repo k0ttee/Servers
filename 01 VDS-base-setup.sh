@@ -108,12 +108,11 @@ echo 'tmpfs /sessions tmpfs noatime,nodiratime,nodev,nosuid,size=64M 0 0' >> /et
 # логирование #
 ###############
 
-############################################## не писать логи крона в /var/log/auth.log
+############################################## чтобы Cron не гадил своими сессиями в /var/log/auth.log
 
-echo 'EXTRA_OPTS="-L 0"' >> /etc/default/cron
+echo 'session [success=1 default=ignore] pam_succeed_if.so service in cron quiet use_uid' | cat - /etc/pam.d/common-session-noninteractive > temp && mv temp /etc/pam.d/common-session-noninteractive
 service cron restart
-
-/etc/rsyslog.conf
+service rsyslog restart
 
 #
 

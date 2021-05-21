@@ -99,7 +99,7 @@ server {
         location = /index.php {
                 include snippets/fastcgi-php.conf;
                 fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+                fastcgi_pass unix:/run/php/php8.0-fpm.sock;
         }
         #ssl
         ssl on;

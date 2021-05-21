@@ -1,10 +1,8 @@
-#############
-# установка #
-#############
+#########
+# NGINX #
+#########
 
 apt install nginx
-apt install certbot
-apt install python-certbot-nginx
 
 mv /var/www/html /var/www/web
 chmod 777 /var/www
@@ -73,7 +71,7 @@ http{
 
 /etc/nginx/sites-enabled/site.ru
 
-#############################################################заменить все site.ru своим доменом
+############################################################# заменить все site.ru своим доменом
 
 #HTTPS_WWW → HTTPS
 server {
@@ -122,4 +120,21 @@ server {
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM;
 }
+
+
+
+
+
+
+###############
+# LetsEncrypt #
+###############
+
+apt install certbot
+apt install python-certbot-nginx
+
+############################################################# заменить все site.ru своим доменом
+
+certbot certonly --nginx -d site.ru
+certbot certonly --nginx -d www.site.ru
 

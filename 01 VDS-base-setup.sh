@@ -133,6 +133,24 @@ rm -rf /var/log/*
 
 
 
+########
+# крон #
+########
+
+crontab -e
+
+############################################################## заменить my@mail.ru
+
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/
+MAILTO=my@mail.ru
+
+
+
+
+
+
 #########
 # мусор #
 #########

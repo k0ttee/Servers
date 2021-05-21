@@ -3,6 +3,8 @@
 #############
 
 apt install nginx
+apt install certbot
+apt install python-certbot-nginx
 
 mv /var/www/html /var/www/web
 chmod 777 /var/www

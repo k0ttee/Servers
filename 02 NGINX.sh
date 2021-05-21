@@ -133,7 +133,7 @@ server {
 apt install certbot
 apt install python-certbot-nginx
 
-############################################################# заменить все site.ru своим доменом
+######################################################################### заменить my@mail.ru и все site.ru
 
-certbot certonly --nginx -d site.ru, www.site.ru
+certbot certonly --nginx -m my@mail.ru -n -d site.ru,www.site.ru
 

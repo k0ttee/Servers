@@ -48,7 +48,7 @@ php_admin_value[memory_limit]  = 32M
 
 ########################################################################## применить
 
-sudo systemctl restart php8.0-fpm
+systemctl restart php8.0-fpm
 
 
 

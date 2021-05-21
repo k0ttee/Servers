@@ -137,3 +137,8 @@ apt install python-certbot-nginx
 
 certbot certonly --nginx -m my@mail.ru -n -d site.ru,www.site.ru
 
+######################################################################### продление по воскресеньям в 4:30 утра
+
+crontab -e
+
+30 4 * * 7 certbot renew --nginx --force-renewal

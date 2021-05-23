@@ -135,7 +135,8 @@ apt install python-certbot-nginx
 
 ######################################################################### заменить my@mail.ru и все site.ru
 
-certbot certonly --nginx -m my@mail.ru -n -d site.ru,www.site.ru
+certbot certonly --nginx -m my@mail.ru -n -d site.ru
+certbot certonly --nginx -m my@mail.ru -n -d www.site.ru
 
 ######################################################################### продление по воскресеньям в 4:30 утра
 

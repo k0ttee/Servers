@@ -13,7 +13,6 @@ apt install php8.0-fpm
 #################### модули (многобайтовые строки, постгрес, работа с графикой)
 
 apt install php8.0-mbstring
-apt install php8.0-pgsql
 apt install php8.0-gd
 
 

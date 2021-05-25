@@ -8,4 +8,5 @@ apt install postgresql
 # (libc-ares2 libevent-2.1-7 pgbouncer)
 apt install pgbouncer
 
-#мудули для пхп тут ставить, ибо относятся к этой субд
+# ()
+apt install php8.0-pgsql

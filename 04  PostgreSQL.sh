@@ -61,9 +61,6 @@ echo 'pool_mode = transaction' >> /etc/pgbouncer/pgbouncer.ini
 echo 'max_client_conn = 1000' >> /etc/pgbouncer/pgbouncer.ini
 echo 'auth_type = md5' >> /etc/pgbouncer/pgbouncer.ini
 
-#################################################################################### файл с логинами и паролями
+##########################заменить "пароль" паролем (если нужно, то и postgres заменить на своего пользователя)
 
-#хэш пароля вычисляется так (хэш из выхлопа вставлять в пароль в конфиге)
-echo "md5"$(echo -n 'ПарольПользователь' | md5sum | awk '{print $1}')
-
-/etc/pgbouncer/userlist.txt
+echo \"postgres\" \""md5"$(echo -n 'Парольpostgres' | md5sum | awk '{print $1}')\" >> /etc/pgbouncer/userlist.txt

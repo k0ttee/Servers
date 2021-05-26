@@ -53,3 +53,17 @@ psql
 
 # (libc-ares2 libevent-2.1-7 pgbouncer)
 apt install pgbouncer
+
+################################################################################### в секцию [databases] втыкаю
+
+echo '* = host=localhost port=5432' >> /etc/pgbouncer/pgbouncer.ini
+echo 'pool_mode = transaction' >> /etc/pgbouncer/pgbouncer.ini
+echo 'max_client_conn = 1000' >> /etc/pgbouncer/pgbouncer.ini
+echo 'auth_type = md5' >> /etc/pgbouncer/pgbouncer.ini
+
+#################################################################################### файл с логинами и паролями
+
+#хэш пароля вычисляется так (хэш из выхлопа вставлять в пароль в конфиге)
+echo "md5"$(echo -n 'ПарольПользователь' | md5sum | awk '{print $1}')
+
+/etc/pgbouncer/userlist.txt

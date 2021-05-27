@@ -57,9 +57,9 @@ apt install pgbouncer
 ################################################################################### в секцию [databases] втыкаю
 
 echo '* = host=localhost port=5432' >> /etc/pgbouncer/pgbouncer.ini
-echo 'pool_mode = transaction' >> /etc/pgbouncer/pgbouncer.ini
-echo 'max_client_conn = 1000' >> /etc/pgbouncer/pgbouncer.ini
-echo 'auth_type = md5' >> /etc/pgbouncer/pgbouncer.ini
+echo 'pool_mode = transaction'      >> /etc/pgbouncer/pgbouncer.ini
+echo 'max_client_conn = 1000'       >> /etc/pgbouncer/pgbouncer.ini
+echo 'auth_type = md5'              >> /etc/pgbouncer/pgbouncer.ini
 
 ##########################заменить "пароль" паролем (если нужно, то и postgres заменить на своего пользователя)
 

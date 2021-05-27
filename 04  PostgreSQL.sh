@@ -63,7 +63,7 @@ echo 'auth_type = md5'              >> /etc/pgbouncer/pgbouncer.ini
 
 ##########################заменить "пароль" паролем (если нужно, то и postgres заменить на своего пользователя)
 
-echo \"postgres\" \""md5"$(echo -n 'Парольpostgres' | md5sum | awk '{print $1}')\" >> /etc/pgbouncer/userlist.txt
+echo \"postgres\" \""md5"$(echo -n 'Парольpostgres' | md5sum | awk '{print $1}')\" > /etc/pgbouncer/userlist.txt
 
 ##################################################################################### перезапуск балансировщика
 

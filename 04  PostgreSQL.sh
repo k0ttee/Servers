@@ -78,7 +78,7 @@ service pgbouncer restart
 # сериализация #
 ################
 
-echo 'default_transaction_isolation = \\'serializable\\'' >> /etc/postgresql/12/main/postgresql.conf
+echo "default_transaction_isolation = 'serializable'" >> /etc/postgresql/12/main/postgresql.conf
 
 ########################################################################################## перезапуск постгреса
 

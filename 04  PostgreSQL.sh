@@ -94,6 +94,7 @@ service postgresql restart
 ##############
 
 ########################################################################### узнать уровень изоляции транзакций
+
 su postgres
 psql
 show transaction_isolation;

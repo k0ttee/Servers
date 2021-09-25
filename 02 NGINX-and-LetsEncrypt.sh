@@ -143,3 +143,15 @@ certbot certonly --nginx -m my@mail.ru -n -d www.site.ru
 crontab -e
 
 30 4 * * 7 certbot renew --nginx --force-renewal
+
+########################
+# удаление сертификата #
+########################
+
+certbot delete --cert-name site.ru
+certbot delete --cert-name www.site.ru
+
+#################
+# чистка ключей #
+#################
+

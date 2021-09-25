@@ -144,12 +144,22 @@ crontab -e
 
 30 4 * * 7 certbot renew --nginx --force-renewal
 
+
+
+
+
+
 ########################
 # удаление сертификата #
 ########################
 
 certbot delete --cert-name site.ru
 certbot delete --cert-name www.site.ru
+
+
+
+
+
 
 ##########################
 # чистка архивных ключей #

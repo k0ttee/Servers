@@ -151,7 +151,9 @@ crontab -e
 certbot delete --cert-name site.ru
 certbot delete --cert-name www.site.ru
 
-#################
-# чистка ключей #
-#################
+##########################
+# чистка архивных ключей #
+##########################
 
+rm /etc/letsencrypt/csr/*
+rm mv /etc/letsencrypt/keys/*

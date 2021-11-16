@@ -1,3 +1,12 @@
+########################
+# Debian это не Ubuntu #
+########################
+
+#из коробки Debian не умеет add-apt-repository
+#apt install software-properties-common dirmngr apt-transport-https lsb-release ca-certificates -y
+#для удаления просто добавить флаг --remove на конец команды
+#add-apt-repository ppa:certbot/certbot
+
 #########
 # NGINX #
 #########

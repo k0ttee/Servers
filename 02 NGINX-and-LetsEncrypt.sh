@@ -175,4 +175,4 @@ certbot delete --cert-name www.site.ru
 ##########################
 
 rm /etc/letsencrypt/csr/*
-rm mv /etc/letsencrypt/keys/*
+rm /etc/letsencrypt/keys/*

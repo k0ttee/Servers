@@ -71,33 +71,7 @@ source .bashrc
 
 
 
-###################################
-# файл подкачки размером по вкусу #
-###################################
 
-fallocate -l 1024M /swapfile
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
-echo '/swapfile none swap sw 0 0' >> /etc/fstab
-echo 'vm.swappiness=10' >> /etc/sysctl.conf
-echo 1000 > /proc/sys/vm/vfs_cache_pressure
-
-############################################################################ применение
-
-sysctl -p
-systemctl daemon-reload
-
-
-
-
-
-
-######################
-# рамдиск для сессий #
-######################
-
-echo 'tmpfs /sessions tmpfs noatime,nodiratime,nodev,nosuid,size=64M 0 0' >> /etc/fstab
 
 
 
@@ -127,24 +101,6 @@ echo 'mail.err                /dev/null' >> /etc/rsyslog.conf
 
 service rsyslog restart
 rm -rf /var/log/*
-
-
-
-
-
-
-########
-# крон #
-########
-
-crontab -e
-
-############################################################## заменить my@mail.ru
-
-SHELL=/bin/bash
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-HOME=/
-MAILTO=my@mail.ru
 
 
 

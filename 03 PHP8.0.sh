@@ -1,40 +1,4 @@
 #################
-# настройка ini #
-#################
-
-########################################################################## направление сессий в оперативку
-
-echo 'session.cookie_lifetime = 0'          >> /etc/php/8.0/fpm/php.ini
-echo 'session.use_cookies = On'             >> /etc/php/8.0/fpm/php.ini
-echo 'session.use_only_cookies = On'        >> /etc/php/8.0/fpm/php.ini
-echo 'session.use_strict_mode = On'         >> /etc/php/8.0/fpm/php.ini
-echo 'session.cookie_httponly = On'         >> /etc/php/8.0/fpm/php.ini
-echo 'session.cookie_secure = On'           >> /etc/php/8.0/fpm/php.ini
-echo 'session.cookie_samesite = "SameSite"' >> /etc/php/8.0/fpm/php.ini
-echo 'session.use_trans_sid = Off'          >> /etc/php/8.0/fpm/php.ini
-echo 'session.sid_length = 128'             >> /etc/php/8.0/fpm/php.ini
-echo 'session.sid_bits_per_character = 6'   >> /etc/php/8.0/fpm/php.ini
-echo 'session.hash_function = "sha256"'     >> /etc/php/8.0/fpm/php.ini
-echo 'session.save_path = "/sessions"'      >> /etc/php/8.0/fpm/php.ini
-
-########################################################################## применить
-
-systemctl restart php8.0-fpm
-
-########################################################################## удалить старые сессии
-
-rm /var/lib/php/sessions/*
-
-
-
-
-
-
-
-
-
-
-#################
 # настройка fpm #
 #################
 

@@ -1,25 +1,3 @@
-##########################
-# добавление и установка #
-##########################
-
-apt install software-properties-common
-add-apt-repository ppa:ondrej/php
-apt update
-
-#################### поставятся php-common php8.0-cli php8.0-common php8.0-fpm php8.0-opcache php8.0-readline
-
-apt install php8.0-fpm
-
-#################### модули (многобайтовые строки, постгрес, работа с графикой)
-
-apt install php8.0-mbstring
-apt install php8.0-gd
-
-
-
-
-
-
 #################
 # настройка fpm #
 #################
